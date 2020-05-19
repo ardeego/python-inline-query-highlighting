@@ -1,1 +1,4 @@
 node_modules
+*.vsix
+.vscode/settings.json
+*.tkn

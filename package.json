@@ -1,19 +1,39 @@
 {
-    "name": "python-string-sql",
-    "displayName": "python-string-sql",
-    "description": "highlight python strings as sql",
-    "version": "1.1.0",
-    "publisher": "ptweir",
-    "icon": "docs/logo.png",
+    "name": "python-inline-query-highlighting",
+    "displayName": "Python Inline Kusto/SQL Syntax Highlighting",
+    "description": "Support for inline query language (Kusto, SQL) syntax highlighting in Python/Visual Studio Code.",
+    "version": "1.0.1",
+    "publisher": "ardeego",
+    "homepage": "https://github.com/ardeego/python-inline-query-highlighting",
+    "icon": "images/logo.png",
     "repository": {
-        "url": "https://github.com/ptweir/python-string-sql"
+      "type": "git",
+      "url": "https://github.com/ardeego/python-inline-query-highlighting"
+    },
+    "bugs": {
+      "url": "https://github.com/ardeego/python-inline-query-highlighting/issues"
     },
     "engines": {
         "vscode": "^1.32.0"
     },
     "categories": [
-        "Programming Languages",
-        "Snippets"
+        "Extension Packs",
+        "Programming Languages"
+    ],
+    "keywords": [
+        "python",
+        "jupyter",
+        "ipython",
+        "kusto",
+        "sql",
+        "azure",
+        "language",
+        "highlight",
+        "syntax"
+      ],
+    "extensionPack": [ 
+        "rosshamish.kuskus-kusto-syntax-highlighting",
+        "rosshamish.kuskus-kusto-language-server"
     ],
     "contributes": {
         "grammars": [
@@ -28,6 +48,16 @@
                 }
             },
             {
+                "path": "./syntaxes/highlight-kusto-string.json",
+                "scopeName": "python-kusto.injection",
+                "injectTo": [
+                    "source.python"
+                ],
+                "embeddedLanguages": {
+                    "meta.embedded.kusto": "kusto"
+                }
+            },
+            {
                 "path": "./syntaxes/highlight-html-string.json",
                 "scopeName": "python-html.injection",
                 "injectTo": [
@@ -35,24 +65,6 @@
                 ],
                 "embeddedLanguages": {
                     "meta.embedded.block.html": "html"
-                }
-            }
-        ],
-        "snippets": [
-            {
-                "language": "python",
-                "path": "./snippets/python.json"
-            }
-        ],
-        "keybindings": [
-            {
-                "command": "editor.action.insertSnippet",
-                "key": "cmd+s",
-                "mac": "ctrl+s",
-                "when": "editorTextFocus",
-                "args": {
-                    "langId": "python",
-                    "name": "SQL_highlighted_string"
                 }
             }
         ]

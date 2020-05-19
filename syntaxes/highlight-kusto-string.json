@@ -1,0 +1,23 @@
+{
+  "fileTypes": [
+    "py"
+  ],
+  "injectionSelector": "L:string.quoted.multi.python, L:meta.fstring.python - (comment.line.number-sign.python, punctuation.definition.comment.python)",
+  "patterns": [
+    {
+      "begin": "( *\\/\\/kusto| *\\/\\/beginkusto| *\\/\\/begin-kusto)",
+      "end": "( *\\/\\/endkusto| *\\/\\/end-kusto)",
+      "captures": {
+        "1": {
+          "name": "variable.parameter"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.kusto"
+        }
+      ]
+    }
+  ],
+  "scopeName": "python-sql.injection"
+}
