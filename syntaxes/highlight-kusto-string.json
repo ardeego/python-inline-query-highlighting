@@ -19,5 +19,5 @@
       ]
     }
   ],
-  "scopeName": "python-sql.injection"
+  "scopeName": "python-kusto.injection"
 }

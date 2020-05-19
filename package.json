@@ -2,7 +2,7 @@
     "name": "python-inline-query-highlighting",
     "displayName": "Python Inline Kusto/SQL Syntax Highlighting",
     "description": "Support for inline query language (Kusto, SQL) syntax highlighting in Python/Visual Studio Code.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "publisher": "ardeego",
     "homepage": "https://github.com/ardeego/python-inline-query-highlighting",
     "icon": "images/logo.png",
